@@ -1,0 +1,3 @@
+@echo off
+echo This is a sample text file. > myfile.txt
+echo File created successfully!
