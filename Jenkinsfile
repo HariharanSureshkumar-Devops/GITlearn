@@ -1,9 +1,17 @@
 pipeline {
     agent any
+    //ENvironment Variables BLock 
+    environment {
+        ENV_VAR1 = 'env var-1 value'
+        ENV_VAR2 = 'env var-2 value'
+        ENV_VAR3 = 'env var-3 value'
+    }
+    // Parameters Block 
     stages {
         stage('Build') {
             steps {
                 echo 'Building the application...'
+                echo  " The name of ENV_VAR1 is : ${ENV_VAR1}"
             }
             post {
                 success{
@@ -17,6 +25,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
+                echo " The name of ENV_VAR2 is : ${ENV_VAR2}"
             }
             post{
                 success{
@@ -30,6 +39,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
+                echo " The name of ENV_VAR3 is : ${ENV_VAR3}"
             } // EDO Steps
             post{
                 success{
