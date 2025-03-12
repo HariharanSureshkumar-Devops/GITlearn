@@ -10,11 +10,13 @@ pipeline {
             steps {
                 echo 'Running tests...'
             }
-        }
+        } // EOD 
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-            }
-        }
-    }
-}
+            } // EDO Steps
+        } //EOD Stage Deploy
+    } //EOD Stages 
+// POST BLOCK 
+    
+} // EOD pipeline
